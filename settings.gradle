@@ -16,10 +16,10 @@ dependencyResolutionManagement {
         maven { url = "https://jitpack.io" }
     }
 }
-rootProject.name = "smartsync-mqtt-plugin"
+rootProject.name = "smartsync-homeassistant-plugin"
 
 // The plugin interface: a temporary copy (vendor/README.md) until plugin-api-v0.1.0 is on JitPack.
 include ':plugin-api'
 project(':plugin-api').projectDir = file('vendor/plugin-api')
 
-include ':mqtt'
+include ':homeassistant'

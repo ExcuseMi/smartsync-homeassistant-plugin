@@ -34,10 +34,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Unit tests (plugin and plugin interface)
-        run: ./gradlew --continue :plugin-api:testDebugUnitTest :mqtt:testDebugUnitTest
+        run: ./gradlew --continue :plugin-api:testDebugUnitTest :homeassistant:testDebugUnitTest
 
       - name: Lint and release build
-        run: ./gradlew :mqtt:lintDebug :mqtt:assembleRelease :mqtt:publishReleasePublicationToMavenLocal
+        run: ./gradlew :homeassistant:lintDebug :homeassistant:assembleRelease :homeassistant:publishReleasePublicationToMavenLocal
 
       - name: Upload test reports
         if: failure()
@@ -45,13 +45,13 @@ jobs:
         with:
           name: test-reports
           path: |
-            mqtt/build/reports/
-            mqtt/build/test-results/
+            homeassistant/build/reports/
+            homeassistant/build/test-results/
             vendor/plugin-api/build/reports/
           if-no-files-found: ignore
 
       - name: Upload the plugin library
         uses: actions/upload-artifact@v4
         with:
-          name: mqtt-plugin-aar
-          path: mqtt/build/outputs/aar/*.aar
+          name: homeassistant-plugin-aar
+          path: homeassistant/build/outputs/aar/*.aar
