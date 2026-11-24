@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.10.0'
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = "https://jitpack.io" }
+    }
+}
+rootProject.name = "smartsync-mqtt-plugin"
+
+// The plugin interface: a temporary copy (vendor/README.md) until plugin-api-v0.1.0 is on JitPack.
+include ':plugin-api'
+project(':plugin-api').projectDir = file('vendor/plugin-api')
+
+include ':mqtt'
