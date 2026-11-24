@@ -1,3 +1,5 @@
+> **Moved:** this plugin now lives in [ExcuseMi/smartsync-plugins](https://github.com/ExcuseMi/smartsync-plugins) (module `homeassistant/`), with its history. This repository is archived.
+
 # Home Assistant plugin for G-Shock Smart Sync
 
 Your watch in Home Assistant, with live values, real controls and history.
